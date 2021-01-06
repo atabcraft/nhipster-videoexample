@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="stream">
+            <h2><span jhiTranslate="videoexampleApp.stream.detail.title">Stream</span> {{ stream.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="videoexampleApp.stream.name">Name</span></dt>
+                <dd>
+                    <span>{{ stream.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="videoexampleApp.stream.blob">Blob</span></dt>
+                <dd>
+                    <div *ngIf="stream.blob">
+                        <a (click)="openFile(stream?.blobContentType!, stream?.blob)" jhiTranslate="entity.action.open">open</a>
+                        {{ stream.blobContentType }}, {{ byteSize(stream.blob) }}
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/stream', stream.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

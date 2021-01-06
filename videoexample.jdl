@@ -1,0 +1,30 @@
+application {
+  config {
+    baseName videoexample
+    applicationType monolith
+    databaseType sql
+    prodDatabaseType postgresql
+    clientPackageManager yarn
+  }
+  entities *
+}
+
+entity Profile {
+    image ImageBlob required
+}
+
+entity Stream {
+	name String,
+    blob Blob
+}
+
+relationship OneToOne {
+    Profile{user} to User,
+}
+
+relationship ManyToMany {
+	Profile{ streams } to Stream { profiles }
+}
+
+// Set pagination options
+paginate Profile, Stream with infinite-scroll

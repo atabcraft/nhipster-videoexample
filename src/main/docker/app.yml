@@ -1,0 +1,8 @@
+version: '2'
+services:
+  videoexample-app:
+    build: ../../..
+    container_name: videoexample-app
+    environment:
+    ports:
+      - 8080:8080

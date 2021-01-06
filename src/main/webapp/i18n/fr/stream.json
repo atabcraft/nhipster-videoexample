@@ -1,0 +1,24 @@
+{
+  "videoexampleApp": {
+    "stream": {
+      "home": {
+        "title": "Streams",
+        "createLabel": "Créer un nouveau Stream",
+        "createOrEditLabel": "Créer ou éditer un Stream",
+        "notFound": "Aucun Stream trouvé"
+      },
+      "created": "Un nouveau Stream a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Stream avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Stream avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Stream {{ id }} ?"
+      },
+      "detail": {
+        "title": "Stream"
+      },
+      "name": "Name",
+      "blob": "Blob",
+      "profiles": "Profiles"
+    }
+  }
+}

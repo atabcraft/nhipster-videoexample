@@ -1,0 +1,24 @@
+{
+  "videoexampleApp": {
+    "stream": {
+      "home": {
+        "title": "Streams",
+        "createLabel": "Create a new Stream",
+        "createOrEditLabel": "Create or edit a Stream",
+        "notFound": "No Streams found"
+      },
+      "created": "A new Stream is created with identifier {{ param }}",
+      "updated": "A Stream is updated with identifier {{ param }}",
+      "deleted": "A Stream is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Stream {{ id }}?"
+      },
+      "detail": {
+        "title": "Stream"
+      },
+      "name": "Name",
+      "blob": "Blob",
+      "profiles": "Profiles"
+    }
+  }
+}
