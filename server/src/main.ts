@@ -6,6 +6,7 @@ import { setupSwagger } from './swagger';
 import { config } from './config';
 import { Logger, ValidationPipe, BadRequestException } from '@nestjs/common';
 import * as fs from 'fs';
+import { json } from 'express';
 const logger: Logger = new Logger('Main');
 const port = process.env.NODE_SERVER_PORT || config.get('server.port');
 const useJHipsterRegistry = config.get('eureka.client.enabled');
@@ -16,6 +17,8 @@ async function bootstrap(): Promise<void> {
 
     const appOptions = { cors: true };
     const app = await NestFactory.create(AppModule, appOptions);
+    app.use(json({limit: '50mb'}));
+    logger.warn("runnign in profile" + process.env);
     app.useGlobalPipes(
         new ValidationPipe({
             exceptionFactory: (): BadRequestException => new BadRequestException('Validation error'),
