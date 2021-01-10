@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === 'prod') {
         name: 'default',
         type: 'postgres',
         database: 'videoexample',
-        url: 'postgresql://YOUR_USER:YOUR_PWD@localhost:27017/videoexample',
+        url: 'postgresql://videoexample@localhost:5432/videoexample',
         logging: false,
         synchronize: commonConf.SYNCRONIZE,
         entities: commonConf.ENTITIES,
