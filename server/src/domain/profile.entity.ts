@@ -11,8 +11,8 @@ import { User } from './user.entity';
  */
 @Entity('profile')
 export class Profile extends BaseEntity {
-    @Column({ type: 'blob', name: 'image' })
-    image: any;
+    @Column({ type: 'bytea', name: 'image' })
+    image: string;
 
     @Column({ name: 'image_content_type' })
     imageContentType: string;
