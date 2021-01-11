@@ -13,7 +13,7 @@ export class Stream extends BaseEntity {
     name: string;
 
     @Column({ type: 'bytea', name: 'blob', nullable: true })
-    blob: string;
+    blob: Buffer;
 
     @Column({ name: 'blob_content_type', nullable: true })
     blobContentType: string;

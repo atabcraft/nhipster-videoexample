@@ -12,7 +12,7 @@ import { User } from './user.entity';
 @Entity('profile')
 export class Profile extends BaseEntity {
     @Column({ type: 'bytea', name: 'image' })
-    image: string;
+    image: Buffer;
 
     @Column({ name: 'image_content_type' })
     imageContentType: string;

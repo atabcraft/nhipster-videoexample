@@ -12,7 +12,11 @@ export class StreamMapper {
         const entity = new Stream();
         const fields = Object.getOwnPropertyNames(entityDTO);
         fields.forEach(field => {
-            entity[field] = entityDTO[field];
+            if( field === 'blob'){
+                entity[field] = Buffer.from(entityDTO[field], 'base64');
+            } else {
+                entity[field] = entityDTO[field];
+            }
         });
         return entity;
     }
@@ -26,7 +30,12 @@ export class StreamMapper {
         const fields = Object.getOwnPropertyNames(entity);
 
         fields.forEach(field => {
-            entityDTO[field] = entity[field];
+            if( field === 'blob'){
+                entityDTO[field] = entity[field].toString('base64');
+            } else {
+                entityDTO[field] = entity[field];
+            }
+
         });
 
         return entityDTO;
